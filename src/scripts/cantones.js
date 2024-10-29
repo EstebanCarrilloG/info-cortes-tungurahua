@@ -6,17 +6,14 @@ export default function cantones() {
 
   data.map((e) => {
     e.table_data.map((e, i) => {
+      //console.log(casa)
 
-        
-        //console.log(casa)
-
-        cantonesArray.push(e["CANTÓN"]);
+      cantonesArray.push(e["CANTÓN"]);
     });
   });
 
-  cantonesArray = [...new Set(cantonesArray)]
+  cantonesArray = [...new Set(cantonesArray)];
   //console.log(cantonesArray)
-
 
   return cantonesArray;
 }
