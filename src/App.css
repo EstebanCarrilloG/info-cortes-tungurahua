@@ -1,0 +1,88 @@
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 95%;
+}
+
+header{
+  background-color: #242424;
+  color: white;
+}
+
+.info{
+  background: yellowgreen;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  color: #616161;
+  font-weight: bold;
+
+}
+
+.header-container{
+  padding: 2rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+main{
+  background-color: #616161;
+  color: white;
+  min-height: 100vh;
+}
+
+.main-container{
+  padding: 2rem 0;
+}
+.forms-section{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border: 1px solid;
+  padding: 1rem 1.5rem;
+}
+
+form{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.search-form input, .options-form select, .data-filter-form select {
+  height: 2rem;
+  padding: 0.5rem 0.7rem;
+  width: 100%;
+
+}  
+
+.options-form select, .data-filter-form select{
+  width: max-content;
+}
+
+.data-filter-form{
+  padding-left: 2rem;
+}
+.data-filter-form label{
+  text-transform: capitalize;
+}
+.table-container{
+  padding: 2rem 0;
+  overflow-x: scroll;
+  text-transform: capitalize;
+}
+
+
+table, td, th {
+  border: 1px solid;
+}
+
+td, th {
+  padding: 10px;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}

@@ -1,5 +1,4 @@
 import data from "../data/data.json";
-import clearString from "../helpers/clearString";
 
 export default function optionsFilter(key) {
   let cantonesArray = [];
