@@ -9,7 +9,7 @@ import searchFilter from "./scripts/searchFilter";
 function App() {
   const [data, setData] = useState(getAllData());
   const thItems = thFilter();
-  const options = thFilter().filter(key => key != 'sectores');
+  const options = thFilter().filter((key) => key != "sectores");
   const [option, setOption] = useState(options[0]);
 
   const handleSearch = (e) => {
@@ -31,9 +31,13 @@ function App() {
           <h1>
             Programación cortes del servicio de energía eléctrica Tungurahua
           </h1>
-          <p>Del 28 al 30 de octubre del 2024</p>
-          <p className="info">*Recuerda que debido a la mejora de las condiciones hidrológicas, los cortes de energía
-          pueden reducirse dentro del periodo de corte programado.</p>
+          <p>Del 31 de octubre al 03 de
+          noviembre del 2024.</p>
+          <p className="info">
+            *Recuerda que debido a la mejora de las condiciones hidrológicas,
+            los cortes de energía pueden reducirse dentro del periodo de corte
+            programado.
+          </p>
         </div>
       </header>
 
@@ -98,13 +102,9 @@ function App() {
               <tbody>
                 {data?.map((item) => (
                   <tr>
-                    <td>{item["canton"]}</td>
-                    <td>{item["parroquias"]}</td>
-                    <td>{item["alimentador"]}</td>
-                    <td>{item["sectores"]}</td>
-                    <td>{item["lun 28"]}</td>
-                    <td>{item["mar 29"] || item["Mar-29"]}</td>
-                    <td>{item["mier 30"] || item["Miérc 30"]}</td>
+                    {thItems.map((key) => (
+                      <td>{item[key]}</td>
+                    ))}
                   </tr>
                 ))}
               </tbody>
