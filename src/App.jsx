@@ -1,28 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import tableHeadersFilter from "./scripts/tableHeadersFilter";
 import dataFiltered from "./scripts/dataFiltered";
+import optionsFilter from "./scripts/optionsFilter"
 import getAllData from "./scripts/getAllData";
-import optionsFilter from "./scripts/optionsFilter";
 import searchFilter from "./scripts/searchFilter";
 
 function App() {
-  const [data, setData] = useState(getAllData());
+  
+  
+  const [isVisible, setIsVisible] = useState(false);
+  const [week, setWeek] = useState("thisWeek")
+  const [data, setData] = useState(getAllData(week));
   const options = tableHeadersFilter().filter((key) => key != "sectores");
   const [option, setOption] = useState(options[0]);
-  const [isVisible, setIsVisible] = useState(false);
 
+  useEffect(() => {
+    
+   setData(getAllData(week))
+  }, [week])
+  
   const handleSearch = (e) => {
     e.preventDefault();
     const { value } = e.target;
-    setData(searchFilter(value));
+    setData(searchFilter(value,week));
     console.log(searchFilter(value));
   };
   const handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
     console.log(name, value);
-    setData(dataFiltered(name, value));
+    setData(dataFiltered(name, value,week));
   };
   return (
     <>
@@ -43,6 +51,10 @@ function App() {
 
       <main>
         <div className="main-container container">
+        <div>
+          <button onClick={() => setWeek("thisWeek")}> 1 oct - 3 nov</button>
+          <button onClick={() => setWeek("nextWeek")}> 4 nov - 7 nov</button>
+        </div>
           <div className="forms-section">
             <form className="search-form" onSubmit={(e) => e.preventDefault()}>
               <label htmlFor="search">Buscar: </label>
@@ -61,7 +73,7 @@ function App() {
                 id="options"
                 onChange={(e) => setOption(e.target.value)}
               >
-                {options.map((option, i) => (
+                {options.map((option) => (
                   <>
                     <option value={option} key={option}>
                       {option}
@@ -74,7 +86,7 @@ function App() {
               <form className="data-filter-form" onChange={handleChange}>
                 <label htmlFor={option.toLowerCase()}>{option + ": "}</label>
                 <select name={option} id={option.toLowerCase()}>
-                  {optionsFilter(option).map((e) => {
+                  {optionsFilter(option,week).map((e) => {
                     return (
                       e !== null && (
                         <option value={e} key={e}>

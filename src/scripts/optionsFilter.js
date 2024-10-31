@@ -1,11 +1,13 @@
-import data from "../data/data.json";
+import dataSelection from "./dataSelection";
 
-export default function optionsFilter(key) {
+
+export default function optionsFilter(key,week) {
+  const data = dataSelection(week);
   let cantonesArray = [];
   cantonesArray.push("");
 
-  data.map((e) => {
-    e.table_data.map((e, i) => {
+  data.general.map((e) => {
+    e.table_data.map((e) => {
       cantonesArray.push(e[key]);
     });
   });

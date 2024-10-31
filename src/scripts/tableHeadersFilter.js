@@ -1,7 +1,7 @@
-import data from "../data/data.json";
-import dataIndustrias from "../data/data-industrias.json";
-export default function tableHeadersFilter(industrias = "") {
+import dataSelection from "./dataSelection";
+export default function tableHeadersFilter(week,industrias = "") {
+  const data = dataSelection(week)
   return industrias == "industrias"
-    ? Object.keys(dataIndustrias[0].table_data[0])
-    : Object.keys(data[0].table_data[0]);
+    ? Object.keys(data.industrias[0].table_data[0])
+    : Object.keys(data.general[0].table_data[0]);
 }
