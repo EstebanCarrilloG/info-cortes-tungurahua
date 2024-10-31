@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import thFilter from "./scripts/thFilter";
+import tableHeadersFilter from "./scripts/tableHeadersFilter";
 import dataFiltered from "./scripts/dataFiltered";
 import getAllData from "./scripts/getAllData";
 import optionsFilter from "./scripts/optionsFilter";
@@ -8,9 +8,9 @@ import searchFilter from "./scripts/searchFilter";
 
 function App() {
   const [data, setData] = useState(getAllData());
-  const thItems = thFilter();
-  const options = thFilter().filter((key) => key != "sectores");
+  const options = tableHeadersFilter().filter((key) => key != "sectores");
   const [option, setOption] = useState(options[0]);
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -29,10 +29,10 @@ function App() {
       <header>
         <div className="header-container container">
           <h1>
-            Programación cortes del servicio de energía eléctrica Tungurahua
+            Programación cortes del servicio de energía eléctrica para
+            Tungurahua
           </h1>
-          <p>Del 31 de octubre al 03 de
-          noviembre del 2024.</p>
+          <p>Del 31 de octubre al 03 de noviembre del 2024.</p>
           <p className="info">
             *Recuerda que debido a la mejora de las condiciones hidrológicas,
             los cortes de energía pueden reducirse dentro del periodo de corte
@@ -48,7 +48,6 @@ function App() {
               <label htmlFor="search">Buscar: </label>
               <input
                 type="search"
-                name="CANTÓN"
                 id="search"
                 placeholder="canton, parroquias, alimentador o sectores"
                 onChange={(e) => handleSearch(e)}
@@ -90,10 +89,38 @@ function App() {
           </div>
 
           <div className="table-container">
+            <div className="industrias-container">
+              <p
+                className="industrias-header"
+                onClick={() => setIsVisible(!isVisible)}
+              >
+                Sectores industriales <span>{isVisible ? "▲" : "▼"}</span>
+              </p>
+              <div className={`industrias-table-container`}>
+                {isVisible && (
+                  <table className={`industrias-table`}>
+                    <thead>
+                      {tableHeadersFilter("industrias").map((item) => (
+                        <th>{item.toUpperCase()}</th>
+                      ))}
+                    </thead>
+                    <tbody>
+                      {getAllData("industrias")?.map((item) => (
+                        <tr>
+                          {tableHeadersFilter("industrias").map((key) => (
+                            <td>{item[key]}</td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                )}
+              </div>
+            </div>
             <table>
               <thead>
                 <tr>
-                  {thItems.map((item) => (
+                  {tableHeadersFilter().map((item) => (
                     <th>{item.toUpperCase()}</th>
                   ))}
                 </tr>
@@ -102,7 +129,7 @@ function App() {
               <tbody>
                 {data?.map((item) => (
                   <tr>
-                    {thItems.map((key) => (
+                    {tableHeadersFilter().map((key) => (
                       <td>{item[key]}</td>
                     ))}
                   </tr>
