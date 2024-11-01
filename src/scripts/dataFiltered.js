@@ -10,6 +10,5 @@ export default function dataFiltered(key,value) {
     });
     
   });
-  //e.table_data.filter((e) => e["CANTÓN"] == value)
   return newData;
 }

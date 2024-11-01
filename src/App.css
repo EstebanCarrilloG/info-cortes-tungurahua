@@ -88,7 +88,8 @@ form {
 }
 
 .industrias-table-container {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-x: scroll;
 }
 
 .industrias-table {
