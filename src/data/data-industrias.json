@@ -1,66 +1,67 @@
 [
   {
-    "table_data": [
-      {
-        "canton": "ambato",
-        "parroquias": "izamba",
-        "alimentador": "plasticaucho",
-        "sectores": "plasticaucho industrial (desconexion parcial)",
-        "juev 31": "00:00 - 24:00",
-        "vier 01": "00:00 - 24:00",
-        "sab 02": "00:00 - 24:00",
-        "dom 03": ""
-      },
-      {
-        "canton": "ambato",
-        "parroquias": "cunchibamba",
-        "alimentador": "fairis",
-        "sectores": "industria fairis",
-        "juev 31": "00:00 - 24:00",
-        "vier 01": "00:00 - 24:00",
-        "sab 02": "00:00 - 16:00",
-        "dom 03": ""
-      },
-      {
-        "canton": "ambato",
-        "parroquias": "izamba",
-        "alimentador": "pia 2",
-        "sectores": "parque industrial ambato 2",
-        "juev 31": "00:00 - 10:00",
-        "vier 01": "",
-        "sab 02": "",
-        "dom 03": ""
-      },
-      {
-        "canton": "ambato",
-        "parroquias": "izamba",
-        "alimentador": "pia 1",
-        "sectores": "parque industrial ambato pia 1",
-        "juev 31": "00:00 - 10:00",
-        "vier 01": "",
-        "sab 02": "",
-        "dom 03": ""
-      },
-      {
-        "canton": "ambato",
-        "parroquias": "santa rosa",
-        "alimentador": "industrial",
-        "sectores": "parque industrial santa rosa, sector casigana",
-        "juev 31": "00:00 - 10:00",
-        "vier 01": "",
-        "sab 02": "",
-        "dom 03": ""
-      },
-      {
-        "canton": "ambato",
-        "parroquias": "benitez",
-        "alimentador": "bioalimentar",
-        "sectores": "industrias",
-        "juev 31": "00:00 - 24:00",
-        "vier 01": "00:00 - 24:00",
-        "sab 02": "00:00 - 16:00",
-        "dom 03": ""
-      }
-    ]
+      "table_number": 1,
+      "table_data": [
+          {
+              "canton": "ambato",
+              "parroquias": "izamba",
+              "alimentador": "plasticaucho",
+              "sectores": "plasticaucho industrial (desconexion parcial)",
+              "vier 01": "00:00 - 24:00",
+              "sab 02": "00:00 - 24:00",
+              "dom 03": "",
+              "lun 04": ""
+          },
+          {
+              "canton": "ambato",
+              "parroquias": "cunchibamba",
+              "alimentador": "fairis",
+              "sectores": "industria fairis",
+              "vier 01": "00:00 - 24:00",
+              "sab 02": "00:00 - 16:00",
+              "dom 03": "",
+              "lun 04": ""
+          },
+          {
+              "canton": "ambato",
+              "parroquias": "izamba",
+              "alimentador": "pia 2",
+              "sectores": "parque industrial ambato 2",
+              "vier 01": "",
+              "sab 02": "",
+              "dom 03": "",
+              "lun 04": ""
+          },
+          {
+              "canton": "ambato",
+              "parroquias": "izamba",
+              "alimentador": "pia 1",
+              "sectores": "parque industrial ambato pia 1",
+              "vier 01": "",
+              "sab 02": "",
+              "dom 03": "",
+              "lun 04": ""
+          },
+          {
+              "canton": "ambato",
+              "parroquias": "santa rosa",
+              "alimentador": "industrial",
+              "sectores": "parque industrial santa rosa, sector casigana",
+              "vier 01": "",
+              "sab 02": "",
+              "dom 03": "",
+              "lun 04": ""
+          },
+          {
+              "canton": "ambato",
+              "parroquias": "benitez",
+              "alimentador": "bioalimentar",
+              "sectores": "industrias holviplas, bioalimentar y gelco.",
+              "vier 01": "00:00 - 24:00",
+              "sab 02": "00:00 - 16:00",
+              "dom 03": "",
+              "lun 04": ""
+          }
+      ]
   }
 ]

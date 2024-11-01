@@ -32,7 +32,7 @@ function App() {
             Programación cortes del servicio de energía eléctrica para
             Tungurahua
           </h1>
-          <p>Del 31 de octubre al 03 de noviembre del 2024.</p>
+          <p>Del 01 al 04 de noviembre del 2024</p>
           <p className="info">
             *Recuerda que debido a la mejora de las condiciones hidrológicas,
             los cortes de energía pueden reducirse dentro del periodo de corte
