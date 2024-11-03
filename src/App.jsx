@@ -25,12 +25,10 @@ function App() {
     e.preventDefault();
     const { value } = e.target;
     setData(searchFilter(value, week));
-    console.log(searchFilter(value));
   };
   const handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
-    console.log(name, value);
     setData(dataFiltered(name, value, week));
   };
 
