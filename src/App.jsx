@@ -1,29 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 import "./App.css";
 import tableHeadersFilter from "./scripts/tableHeadersFilter";
 import dataFiltered from "./scripts/dataFiltered";
-import getAllData from "./scripts/getAllData";
 import optionsFilter from "./scripts/optionsFilter";
+import getAllData from "./scripts/getAllData";
 import searchFilter from "./scripts/searchFilter";
+import pageInfo from "./data/pageInfo.json";
 
 function App() {
-  const [data, setData] = useState(getAllData());
-  const options = tableHeadersFilter().filter((key) => key != "sectores");
-  const [option, setOption] = useState(options[0]);
   const [isVisible, setIsVisible] = useState(false);
+  const [week, setWeek] = useState("thisWeek");
+  const [data, setData] = useState(getAllData(week));
+  const options = tableHeadersFilter(week).filter((key) => key != "sectores");
+  const [option, setOption] = useState(options[0]);
+  const [active, setActive] = useState(true);
+
+  useEffect(() => {
+    
+    setData(getAllData(week))
+   }, [week])
 
   const handleSearch = (e) => {
     e.preventDefault();
     const { value } = e.target;
-    setData(searchFilter(value));
+    setData(searchFilter(value, week));
     console.log(searchFilter(value));
   };
   const handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
     console.log(name, value);
-    setData(dataFiltered(name, value));
+    setData(dataFiltered(name, value, week));
   };
+
   return (
     <>
       <header>
@@ -32,7 +42,7 @@ function App() {
             Programación cortes del servicio de energía eléctrica para
             Tungurahua
           </h1>
-          <p>Del 01 al 04 de noviembre del 2024</p>
+          <p>{pageInfo[0].pageDescription}</p>
           <p className="info">
             *Recuerda que debido a la mejora de las condiciones hidrológicas,
             los cortes de energía pueden reducirse dentro del periodo de corte
@@ -43,6 +53,26 @@ function App() {
 
       <main>
         <div className="main-container container">
+          <div>
+            <button
+              className={`buttons-selection ${active ? "active" : ""}`}
+              onClick={() => {
+                setWeek("thisWeek");
+                setActive(!active);
+              }}
+            >
+              {pageInfo[0].tabsText.actualy}
+            </button>
+            <button
+              className={`buttons-selection ${!active ? "active" : ""}`}
+              onClick={() => {
+                setWeek("nextWeek");
+                setActive(!active);
+              }}
+            >
+              {pageInfo[0].tabsText.next}
+            </button>
+          </div>
           <div className="forms-section">
             <form className="search-form" onSubmit={(e) => e.preventDefault()}>
               <label htmlFor="search">Buscar: </label>
@@ -61,12 +91,10 @@ function App() {
                 id="options"
                 onChange={(e) => setOption(e.target.value)}
               >
-                {options.map((option, i) => (
-                  <>
-                    <option value={option} key={option}>
-                      {option}
-                    </option>
-                  </>
+                {options.map((option, index) => (
+                  <option value={option} key={index}>
+                    {option}
+                  </option>
                 ))}
               </select>
             </form>
@@ -74,10 +102,10 @@ function App() {
               <form className="data-filter-form" onChange={handleChange}>
                 <label htmlFor={option.toLowerCase()}>{option + ": "}</label>
                 <select name={option} id={option.toLowerCase()}>
-                  {optionsFilter(option).map((e) => {
+                  {optionsFilter(option, week).map((e, index) => {
                     return (
                       e !== null && (
-                        <option value={e} key={e}>
+                        <option value={e} key={index}>
                           {e}
                         </option>
                       )
@@ -100,16 +128,20 @@ function App() {
                 {isVisible && (
                   <table className={`industrias-table`}>
                     <thead>
-                      {tableHeadersFilter("industrias").map((item) => (
-                        <th>{item.toUpperCase()}</th>
-                      ))}
+                      {tableHeadersFilter(week, "industrias").map(
+                        (item, index) => (
+                          <th key={index}>{item}</th>
+                        )
+                      )}
                     </thead>
                     <tbody>
-                      {getAllData("industrias")?.map((item) => (
-                        <tr>
-                          {tableHeadersFilter("industrias").map((key) => (
-                            <td>{item[key]}</td>
-                          ))}
+                      {getAllData(week, "industrias")?.map((item, trIndex) => (
+                        <tr key={trIndex}>
+                          {tableHeadersFilter(week, "industrias").map(
+                            (key, tdIndex) => (
+                              <td key={tdIndex}>{item[key]}</td>
+                            )
+                          )}
                         </tr>
                       ))}
                     </tbody>
@@ -120,17 +152,20 @@ function App() {
             <table>
               <thead>
                 <tr>
-                  {tableHeadersFilter().map((item) => (
-                    <th>{item.toUpperCase()}</th>
+                  {tableHeadersFilter(week).map((item, index) => (
+                    <th key={index}>{item}</th>
                   ))}
                 </tr>
               </thead>
 
               <tbody>
-                {data?.map((item) => (
-                  <tr>
-                    {tableHeadersFilter().map((key) => (
-                      <td>{item[key]}</td>
+                {data?.map((item, trIndex) => (
+                  <tr key={trIndex}>
+                    {tableHeadersFilter(week).map((key, tdIndex) => (
+                      <td
+                        key={tdIndex}
+                        dangerouslySetInnerHTML={{ __html: item[key] }}
+                      />
                     ))}
                   </tr>
                 ))}

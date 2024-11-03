@@ -1,0 +1,78 @@
+[
+  {
+    "table_data": [
+      {
+        "canton": "ambato",
+        "parroquias": "izamba",
+        "alimentador": "plasticaucho",
+        "sectores": "plasticaucho industrial",
+        "mar 5": "00:00 - 24:00",
+        "mierc 6": "00:00 - 24:00",
+        "juev 7": "00:00 - 24:00",
+        "vier 8": "00:00 - 24:00",
+        "sab 9": "00:00 - 24:00",
+        "dom 10": ""
+      },
+      {
+        "canton": "ambato",
+        "parroquias": "cunchibamba",
+        "alimentador": "fairis",
+        "sectores": "industria fairis",
+        "mar 5": "",
+        "mierc 6": "18:00 - 24:00",
+        "juev 7": "00:00 - 24:00",
+        "vier 8": "00:00 - 06:00",
+        "sab 9": "",
+        "dom 10": ""
+      },
+      {
+        "canton": "ambato",
+        "parroquias": "izamba",
+        "alimentador": "pia 2",
+        "sectores": "parque industrial ambato 2",
+        "mar 5": "18:00 - 24:00",
+        "mierc 6": "00:00 - 24:00",
+        "juev 7": "00:00 - 06:00",
+        "vier 8": "",
+        "sab 9": "",
+        "dom 10": ""
+      },
+      {
+        "canton": "ambato",
+        "parroquias": "izamba",
+        "alimentador": "pia 1",
+        "sectores": "parque industrial ambato pia 1",
+        "mar 5": "18:00 - 24:00",
+        "mierc 6": "00:00 - 24:00",
+        "juev 7": "00:00 - 06:00",
+        "vier 8": "",
+        "sab 9": "",
+        "dom 10": ""
+      },
+      {
+        "canton": "ambato",
+        "parroquias": "santa rosa",
+        "alimentador": "industrial",
+        "sectores": "parque industrial santa rosa, sector casigana",
+        "mar 5": "18:00 - 24:00",
+        "mierc 6": "00:00 - 24:00",
+        "juev 7": "00:00 - 06:00",
+        "vier 8": "",
+        "sab 9": "",
+        "dom 10": ""
+      },
+      {
+        "canton": "ambato",
+        "parroquias": "benitez",
+        "alimentador": "bioalimentar",
+        "sectores": "industrias holviplas, bioalimentar y gelco.",
+        "mar 5": "",
+        "mierc 6": "",
+        "juev 7": "18:00 - 24:00",
+        "vier 8": "00:00 - 24:00",
+        "sab 9": "00:00 - 06:00",
+        "dom 10": ""
+      }
+    ]
+  }
+]

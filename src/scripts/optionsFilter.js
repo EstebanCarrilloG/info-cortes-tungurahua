@@ -1,4 +1,4 @@
-import data from "../data/data.json";
+import dataSelection from "./dataSelection";
 
 export default function optionsFilter(key) {
   let options = [];
