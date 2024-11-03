@@ -1,17 +1,15 @@
 import dataSelection from "./dataSelection";
 
+export default function optionsFilter(key) {
+  let options = [];
+  options.push("");
 
-export default function optionsFilter(key,week) {
-  const data = dataSelection(week);
-  let cantonesArray = [];
-  cantonesArray.push("");
-
-  data.general.map((e) => {
+  data.map((e) => {
     e.table_data.map((e) => {
-      cantonesArray.push(e[key]);
+      options.push(e[key]);
     });
   });
 
-  cantonesArray = [...new Set(cantonesArray)];
-  return cantonesArray.sort();
+  options = [...new Set(options)];
+  return options.sort();
 }

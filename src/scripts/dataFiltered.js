@@ -16,6 +16,5 @@ export default function dataFiltered(key,value,week) {
     });
     
   });
-  //e.table_data.filter((e) => e["CANTÓN"] == value)
   return newData;
 }
