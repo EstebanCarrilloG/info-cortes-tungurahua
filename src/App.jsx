@@ -1,35 +1,37 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { IoSearchSharp } from "react-icons/io5";
 
 import "./App.css";
 import tableHeadersFilter from "./scripts/tableHeadersFilter";
-import dataFiltered from "./scripts/dataFiltered";
-import optionsFilter from "./scripts/optionsFilter";
 import getAllData from "./scripts/getAllData";
 import searchFilter from "./scripts/searchFilter";
 import pageInfo from "./data/pageInfo.json";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
-  const [week, setWeek] = useState("thisWeek");
+  const [week, setWeek] = useState("nextWeek");
   const [data, setData] = useState(getAllData(week));
-  const options = tableHeadersFilter(week).filter((key) => key != "sectores");
-  const [option, setOption] = useState(options[0]);
-  const [active, setActive] = useState(true);
+  const [active, setActive] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+  const mainRef = useRef(null);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    
-    setData(getAllData(week))
-   }, [week])
+    setData(searchFilter(searchValue, week));
+    console.log(data);
+  }, [week, searchValue]);
 
   const handleSearch = (e) => {
     e.preventDefault();
     const { value } = e.target;
-    setData(searchFilter(value, week));
+
+    setSearchValue(value);
+
+    setData(searchFilter(searchValue, week));
+    setError("");
   };
-  const handleChange = (e) => {
-    e.preventDefault();
-    const { name, value } = e.target;
-    setData(dataFiltered(name, value, week));
+  const handleScrollToSection = () => {
+    mainRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -50,7 +52,7 @@ function App() {
       </header>
 
       <main>
-        <div className="main-container container">
+        <div className="main-container container" id="main" ref={mainRef}>
           <div>
             <button
               className={`buttons-selection ${active ? "active" : ""}`}
@@ -73,48 +75,58 @@ function App() {
           </div>
           <div className="forms-section">
             <form className="search-form" onSubmit={(e) => e.preventDefault()}>
-              <label htmlFor="search">Buscar: </label>
-              <input
-                type="search"
-                id="search"
-                placeholder="canton, parroquias, alimentador o sectores"
-                onChange={(e) => handleSearch(e)}
-              />
+              <label htmlFor="search">
+                Ingrese el cantón, parroquia, alimentador o sector del cual
+                desee obtener información.
+              </label>
+              <div className="search-bar-container">
+                <input
+                  type="search"
+                  id="search"
+                  placeholder="Ejemplo: huachi loreto"
+                  onChange={(e) => handleSearch(e)}
+                  onClick={handleScrollToSection}
+                />
+                <IoSearchSharp />
+              </div>
+              <span>{error}</span>
             </form>
-
-            <form className="options-form">
-              <label htmlFor="options">Filtrar por: </label>
-              <select
-                name="options"
-                id="options"
-                onChange={(e) => setOption(e.target.value)}
-              >
-                {options.map((option, index) => (
-                  <option value={option} key={index}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </form>
-            {option && (
-              <form className="data-filter-form" onChange={handleChange}>
-                <label htmlFor={option.toLowerCase()}>{option + ": "}</label>
-                <select name={option} id={option.toLowerCase()}>
-                  {optionsFilter(option, week).map((e, index) => {
-                    return (
-                      e !== null && (
-                        <option value={e} key={index}>
-                          {e}
-                        </option>
-                      )
-                    );
-                  })}
-                </select>
-              </form>
-            )}
           </div>
 
-          <div className="table-container">
+          <div className="tables-container">
+            <div className="general-data-container">
+              {data.length > 0 ? (
+                <table className="general-data-table">
+                  <thead>
+                    <tr>
+                      {tableHeadersFilter(week).map((item, index) => (
+                        <th key={index}>{item}</th>
+                      ))}
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {data.map((item, trIndex) => (
+                      <tr key={trIndex}>
+                        {tableHeadersFilter(week).map((key, tdIndex) => (
+                          <td
+                            key={tdIndex}
+                            dangerouslySetInnerHTML={{ __html: item[key] }}
+                          />
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              ) : (
+                <p className="no-results-found">
+                  <b>
+                    <span>ERROR: </span>No se encontraron resultados para el termino de busqueda: {" "}
+                    <span>{searchValue.toUpperCase()}</span>
+                  </b>
+                </p>
+              )}
+            </div>
             <div className="industrias-container">
               <p
                 className="industrias-header"
@@ -126,11 +138,13 @@ function App() {
                 {isVisible && (
                   <table className={`industrias-table`}>
                     <thead>
-                      {tableHeadersFilter(week, "industrias").map(
-                        (item, index) => (
-                          <th key={index}>{item}</th>
-                        )
-                      )}
+                      <tr>
+                        {tableHeadersFilter(week, "industrias").map(
+                          (item, index) => (
+                            <th key={index}>{item}</th>
+                          )
+                        )}
+                      </tr>
                     </thead>
                     <tbody>
                       {getAllData(week, "industrias")?.map((item, trIndex) => (
@@ -147,31 +161,22 @@ function App() {
                 )}
               </div>
             </div>
-            <table>
-              <thead>
-                <tr>
-                  {tableHeadersFilter(week).map((item, index) => (
-                    <th key={index}>{item}</th>
-                  ))}
-                </tr>
-              </thead>
-
-              <tbody>
-                {data?.map((item, trIndex) => (
-                  <tr key={trIndex}>
-                    {tableHeadersFilter(week).map((key, tdIndex) => (
-                      <td
-                        key={tdIndex}
-                        dangerouslySetInnerHTML={{ __html: item[key] }}
-                      />
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
           </div>
         </div>
       </main>
+      <footer className="footer">
+        <p>
+          Programación cortes del servicio de energía eléctrica para Tungurahua
+          | ©2024
+        </p>
+        <p>Todos los derechos reservados.</p>
+        <p></p>
+        <br />
+        <p>
+          Desarrollado por:{" "}
+          <a href="https://github.com/EstebanCarrilloG">Esteban Carrillo</a>
+        </p>
+      </footer>
     </>
   );
 }

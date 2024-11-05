@@ -1,12 +1,22 @@
 import dataSelection from "./dataSelection";
+function escapeRegExp(string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // Escapa todos los caracteres especiales
+}
 
 export default function searchFilter(value, week) {
   const dataInfo = dataSelection(week);
   let newData = [];
-  const regex = new RegExp(`(${value})`, "gi");
+
+  const escapedValue = escapeRegExp(value);
+  const regex = new RegExp(`(${escapedValue})`, "gi");
+
+
 
   dataInfo.general?.map((e) => {
     e.table_data.map((e) => {
+      if(!value){
+        newData.push(e)
+      }else{
      
       if (e["canton"]?.match(regex) || e["parroquias"]?.match(regex) || e["alimentador"]?.match(regex) || e["sectores"]?.match(regex)) {
         let highlightedData = { ...e };
@@ -18,6 +28,7 @@ export default function searchFilter(value, week) {
 
         newData.push(highlightedData);
       }
+    }
     });
   });
 
