@@ -9,7 +9,7 @@ import pageInfo from "./data/pageInfo.json";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
-  const [week, setWeek] = useState("nextWeek");
+  const [week, setWeek] = useState("thisWeek");
   const [data, setData] = useState(getAllData(week));
   const [active, setActive] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -18,7 +18,6 @@ function App() {
 
   useEffect(() => {
     setData(searchFilter(searchValue, week));
-    console.log(data);
   }, [week, searchValue]);
 
   const handleSearch = (e) => {
@@ -55,22 +54,13 @@ function App() {
         <div className="main-container container" id="main" ref={mainRef}>
           <div>
             <button
-              className={`buttons-selection ${active ? "active" : ""}`}
+              className={`buttons-selection active`}
               onClick={() => {
                 setWeek("thisWeek");
                 setActive(!active);
               }}
             >
               {pageInfo[0].tabsText.actualy}
-            </button>
-            <button
-              className={`buttons-selection ${!active ? "active" : ""}`}
-              onClick={() => {
-                setWeek("nextWeek");
-                setActive(!active);
-              }}
-            >
-              {pageInfo[0].tabsText.next}
             </button>
           </div>
           <div className="forms-section">
