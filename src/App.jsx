@@ -18,7 +18,6 @@ function App() {
 
   useEffect(() => {
     setData(searchFilter(searchValue, week));
-    console.log(data);
   }, [week, searchValue]);
 
   const handleSearch = (e) => {
