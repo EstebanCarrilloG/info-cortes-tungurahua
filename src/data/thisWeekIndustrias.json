@@ -1,66 +1,69 @@
 [
   {
-    "table_number": 1,
+    "table_number": 8,
     "table_data": [
+      {
+        "canton": "canton",
+        "parroquias": "parroquias",
+        "alimentador": "alimentador",
+        "sectoresesc tinordeusstriales": "sectores",
+        "viernes 15": "viernes 15",
+        "sabado 16": "sabado 16",
+        "domingo 17": "domingo 17"
+      },
       {
         "canton": "ambato",
         "parroquias": "izamba",
         "alimentador": "plasticaucho",
-        "sectores": "plasticaucho industrial (desconexion parcial)",
-        "vier 01": "00:00 - 24:00",
-        "sab 02": "00:00 - 24:00",
-        "dom 03": "",
-        "lun 04": ""
+        "sectoresesc tinordeusstriales": "plasticaucho industrial (desconexion parcial)",
+        "viernes 15": "00:00 - 24:00",
+        "sabado 16": "00:00 - 24:00",
+        "domingo 17": ""
       },
       {
         "canton": "ambato",
         "parroquias": "cunchibamba",
         "alimentador": "fairis",
-        "sectores": "industria fairis",
-        "vier 01": "00:00 - 24:00",
-        "sab 02": "00:00 - 16:00",
-        "dom 03": "",
-        "lun 04": ""
+        "sectoresesc tinordeusstriales": "industria fairis",
+        "viernes 15": "00:00 - 24:00",
+        "sabado 16": "00:00 - 09:00",
+        "domingo 17": ""
       },
       {
         "canton": "ambato",
         "parroquias": "izamba",
         "alimentador": "pia 2",
-        "sectores": "parque industrial ambato 2",
-        "vier 01": "",
-        "sab 02": "",
-        "dom 03": "",
-        "lun 04": ""
+        "sectoresesc tinordeusstriales": "parque industrial ambato 2",
+        "viernes 15": "00:00 - 09:00",
+        "sabado 16": "",
+        "domingo 17": ""
       },
       {
         "canton": "ambato",
         "parroquias": "izamba",
         "alimentador": "pia 1",
-        "sectores": "parque industrial ambato pia 1",
-        "vier 01": "",
-        "sab 02": "",
-        "dom 03": "",
-        "lun 04": ""
+        "sectoresesc tinordeusstriales": "parque industrial ambato pia 1",
+        "viernes 15": "00:00 - 09:00",
+        "sabado 16": "",
+        "domingo 17": ""
       },
       {
         "canton": "ambato",
         "parroquias": "santa rosa",
         "alimentador": "industrial",
-        "sectores": "parque industrial santa rosa, sector casigana",
-        "vier 01": "",
-        "sab 02": "",
-        "dom 03": "",
-        "lun 04": ""
+        "sectoresesc tinordeusstriales": "parque industrial santa rosa, sector casigana",
+        "viernes 15": "00:00 - 09:00",
+        "sabado 16": "",
+        "domingo 17": ""
       },
       {
         "canton": "ambato",
         "parroquias": "benitez",
         "alimentador": "bioalimentar",
-        "sectores": "industrias holviplas, bioalimentar y gelco.",
-        "vier 01": "00:00 - 24:00",
-        "sab 02": "00:00 - 16:00",
-        "dom 03": "",
-        "lun 04": ""
+        "sectoresesc tinordeusstriales": "industrias holviplas, bioalimentar y gelco.",
+        "viernes 15": "00:00 - 24:00",
+        "sabado 16": "00:00 - 09:00",
+        "domingo 17": ""
       }
     ]
   }
