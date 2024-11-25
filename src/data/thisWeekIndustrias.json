@@ -2,69 +2,51 @@
   {
     "table_number": 8,
     "table_data": [
-      {
-        "canton": "canton",
-        "parroquias": "parroquias",
-        "alimentador": "alimentador",
-        "sectoresesc tinordeusstriales": "sectores",
-        "viernes 15": "viernes 15",
-        "sabado 16": "sabado 16",
-        "domingo 17": "domingo 17"
-      },
-      {
-        "canton": "ambato",
-        "parroquias": "izamba",
-        "alimentador": "plasticaucho",
-        "sectoresesc tinordeusstriales": "plasticaucho industrial (desconexion parcial)",
-        "viernes 15": "00:00 - 24:00",
-        "sabado 16": "00:00 - 24:00",
-        "domingo 17": ""
-      },
-      {
-        "canton": "ambato",
-        "parroquias": "cunchibamba",
-        "alimentador": "fairis",
-        "sectoresesc tinordeusstriales": "industria fairis",
-        "viernes 15": "00:00 - 24:00",
-        "sabado 16": "00:00 - 09:00",
-        "domingo 17": ""
-      },
-      {
-        "canton": "ambato",
-        "parroquias": "izamba",
-        "alimentador": "pia 2",
-        "sectoresesc tinordeusstriales": "parque industrial ambato 2",
-        "viernes 15": "00:00 - 09:00",
-        "sabado 16": "",
-        "domingo 17": ""
-      },
-      {
-        "canton": "ambato",
-        "parroquias": "izamba",
-        "alimentador": "pia 1",
-        "sectoresesc tinordeusstriales": "parque industrial ambato pia 1",
-        "viernes 15": "00:00 - 09:00",
-        "sabado 16": "",
-        "domingo 17": ""
-      },
-      {
-        "canton": "ambato",
-        "parroquias": "santa rosa",
-        "alimentador": "industrial",
-        "sectoresesc tinordeusstriales": "parque industrial santa rosa, sector casigana",
-        "viernes 15": "00:00 - 09:00",
-        "sabado 16": "",
-        "domingo 17": ""
-      },
-      {
-        "canton": "ambato",
-        "parroquias": "benitez",
-        "alimentador": "bioalimentar",
-        "sectoresesc tinordeusstriales": "industrias holviplas, bioalimentar y gelco.",
-        "viernes 15": "00:00 - 24:00",
-        "sabado 16": "00:00 - 09:00",
-        "domingo 17": ""
-      }
+        {
+            "canton": "ambato",
+            "parroquias": "izamba",
+            "alimentador": "plasticaucho",
+            "lun 25": "00:00 - 24:00",
+            "mar 26": "00:00 - 24:00",
+            "mier 27": "00:00 - 24:00",
+            "juev 28": "00:00 - 24:00"
+        },
+        {
+            "canton": "ambato",
+            "parroquias": "izamba",
+            "alimentador": "pia 2",
+            "lun 25": "",
+            "mar 26": "",
+            "mier 27": "06:00 - 24:00",
+            "juev 28": "00:00 - 24:00"
+        },
+        {
+            "canton": "ambato",
+            "parroquias": "izamba",
+            "alimentador": "pia 1",
+            "lun 25": "",
+            "mar 26": "",
+            "mier 27": "06:00 - 24:00",
+            "juev 28": "00:00 - 24:00"
+        },
+        {
+            "canton": "ambato",
+            "parroquias": "santa rosa",
+            "alimentador": "industrial",
+            "lun 25": "",
+            "mar 26": "",
+            "mier 27": "06:00 - 24:00",
+            "juev 28": "00:00 - 24:00"
+        },
+        {
+            "canton": "ambato",
+            "parroquias": "benitez",
+            "alimentador": "bioalimentar",
+            "lun 25": "",
+            "mar 26": "",
+            "mier 27": "",
+            "juev 28": "06:00 - 24:00"
+        }
     ]
-  }
+}
 ]
