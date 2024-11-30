@@ -1,8 +1,9 @@
 [
    { 
-    "pageDescription":"Consulte los cortes programados de emergencia en Tungurahua. Del 25 al 28 de noviembre del 2024.",
+    "pageDescription":"Consulte los cortes programados de emergencia en Tungurahua. Del 29 de noviembre al 08 de diciembre del 2024.",
     "tabsText":{
-        "actualy": "25 - 28 de Nov"
+        "actualy": "29 Nov - 1 Dic",
+        "next":"02 - 08 de Dic"
     }
 }
 ]

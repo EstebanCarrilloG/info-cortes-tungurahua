@@ -11,7 +11,7 @@ function App() {
   const [isVisible, setIsVisible] = useState(false);
   const [week, setWeek] = useState("thisWeek");
   const [data, setData] = useState(getAllData(week));
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(true);
   const [searchValue, setSearchValue] = useState("");
   const mainRef = useRef(null);
   const [error, setError] = useState("");
@@ -52,15 +52,24 @@ function App() {
 
       <main>
         <div className="main-container container" id="main" ref={mainRef}>
-          <div>
+        <div>
             <button
-              className={`buttons-selection active`}
+              className={`buttons-selection ${active ? "active" : ""}`}
               onClick={() => {
                 setWeek("thisWeek");
                 setActive(!active);
               }}
             >
               {pageInfo[0].tabsText.actualy}
+            </button>
+            <button
+              className={`buttons-selection ${!active ? "active" : ""}`}
+              onClick={() => {
+                setWeek("nextWeek");
+                setActive(!active);
+              }}
+            >
+              {pageInfo[0].tabsText.next}
             </button>
           </div>
           <div className="forms-section">
@@ -137,7 +146,7 @@ function App() {
                       </tr>
                     </thead>
                     <tbody>
-                      {getAllData(week, "industrias")?.map((item, trIndex) => (
+                      {getAllData(week, "industrias").map((item, trIndex) => (
                         <tr key={trIndex}>
                           {tableHeadersFilter(week, "industrias").map(
                             (key, tdIndex) => (
