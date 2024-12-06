@@ -1,60 +1,54 @@
 [
   {
-    "table_number": 7,
+    "table_number": 8,
     "table_data": [
       {
         "canton": "ambato",
         "parroquias": "izamba",
         "alimentador": "plasticaucho",
-        "sectores": "plasticaucho industrial (desconexion parcial)",
-        "viernes 29": "00:00 - 24:00",
-        "sabado 30": "00:00 - 24:00",
-        "domingo 1": ""
+        "viernes 6": "00:00 - 24:00",
+        "sabado 7": "00:00 - 24:00",
+        "domingo 8": ""
       },
       {
         "canton": "ambato",
         "parroquias": "cunchibamba",
         "alimentador": "fairis",
-        "sectores": "industria fairis",
-        "viernes 29": "00:00 - 24:00",
-        "sabado 30": "00:00 - 24:00",
-        "domingo 1": ""
+        "viernes 6": "00:00 - 24:00",
+        "sabado 7": "00:00 - 06:00",
+        "domingo 8": ""
       },
       {
         "canton": "ambato",
         "parroquias": "izamba",
         "alimentador": "pia 2",
-        "sectores": "parque industrial ambato 2",
-        "viernes 29": "00:00 - 06:00",
-        "sabado 30": "",
-        "domingo 1": ""
+        "viernes 6": "00:00 - 06:00",
+        "sabado 7": "",
+        "domingo 8": ""
       },
       {
         "canton": "ambato",
         "parroquias": "izamba",
         "alimentador": "pia 1",
-        "sectores": "parque industrial ambato pia 1",
-        "viernes 29": "00:00 - 06:00",
-        "sabado 30": "",
-        "domingo 1": ""
+        "viernes 6": "00:00 - 06:00",
+        "sabado 7": "",
+        "domingo 8": ""
       },
       {
         "canton": "ambato",
         "parroquias": "santa rosa",
         "alimentador": "industrial",
-        "sectores": "parque industrial santa rosa, sector casigana",
-        "viernes 29": "00:00 - 06:00",
-        "sabado 30": "",
-        "domingo 1": ""
+        "viernes 6": "00:00 - 06:00",
+        "sabado 7": "",
+        "domingo 8": ""
       },
       {
         "canton": "ambato",
         "parroquias": "benitez",
         "alimentador": "bioalimentar",
-        "sectores": "industrias holviplas, bioalimentar y gelco.",
-        "viernes 29": "00:00 - 24:00",
-        "sabado 30": "00:00 - 06:00",
-        "domingo 1": ""
+        "viernes 6": "00:00 - 24:00",
+        "sabado 7": "00:00 - 06:00",
+        "domingo 8": ""
       }
     ]
   }
