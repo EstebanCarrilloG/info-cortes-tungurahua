@@ -9,9 +9,9 @@ import pageInfo from "./data/pageInfo.json";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
-  const [week, setWeek] = useState("thisWeek");
+  const [week, setWeek] = useState("01");
   const [data, setData] = useState(getAllData(week));
-  const [active, setActive] = useState(true);
+  const [tabActive, setTabActive] = useState(week);
   const [searchValue, setSearchValue] = useState("");
   const mainRef = useRef(null);
   const [error, setError] = useState("");
@@ -52,25 +52,18 @@ function App() {
 
       <main>
         <div className="main-container container" id="main" ref={mainRef}>
-        <div>
-            <button
-              className={`buttons-selection ${active ? "active" : ""}`}
-              onClick={() => {
-                setWeek("thisWeek");
-                setActive(!active);
-              }}
-            >
-              {pageInfo[0].tabsText.actualy}
-            </button>
-            <button
-              className={`buttons-selection ${!active ? "active" : ""}`}
-              onClick={() => {
-                setWeek("nextWeek");
-                setActive(!active);
-              }}
-            >
-              {pageInfo[0].tabsText.next}
-            </button>
+          <div>
+            {pageInfo[0].tabsText.map((e) => (
+              <button
+                className={`buttons-selection ${tabActive === e.id ? "active" : ""}`}
+                onClick={() => {
+                  setWeek(e.id);
+                  setTabActive(e.id);
+                }}
+              >
+                {e.text}
+              </button>
+            ))}
           </div>
           <div className="forms-section">
             <form className="search-form" onSubmit={(e) => e.preventDefault()}>
@@ -120,7 +113,8 @@ function App() {
               ) : (
                 <p className="no-results-found">
                   <b>
-                    <span>ERROR: </span>No se encontraron resultados para el termino de busqueda: {" "}
+                    <span>ERROR: </span>No se encontraron resultados para el
+                    termino de busqueda:{" "}
                     <span>{searchValue.toUpperCase()}</span>
                   </b>
                 </p>
