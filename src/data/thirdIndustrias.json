@@ -1,0 +1,67 @@
+[
+    {
+        "table_number": 8,
+        "table_data": [
+            {
+                "canton": "ambato",
+                "parroquias": "izamba",
+                "alimentador": "plasticaucho",
+                "sectores": "plasticaucho industrial (desconexion parcial)",
+                "lun 16": "00:00 - 24:00",
+                "mar 17": "00:00 - 24:00",
+                "mier 18": "00:00 - 24:00",
+                "juev 19": "00:00 - 24:00"
+            },
+            {
+                "canton": "ambato",
+                "parroquias": "cunchibamba",
+                "alimentador": "fairis",
+                "sectores": "industria fairis ( desconexion parcial 40%)",
+                "lun 16": "00:00 - 24:00",
+                "mar 17": "00:00 - 24:00",
+                "mier 18": "00:00 - 24:00",
+                "juev 19": "00:00 - 24:00"
+            },
+            {
+                "canton": "ambato",
+                "parroquias": "izamba",
+                "alimentador": "pia 2",
+                "sectores": "parque industrial ambato 2",
+                "lun 16": "",
+                "mar 17": "18:00 - 24:00",
+                "mier 18": "00:00 - 08:00",
+                "juev 19": ""
+            },
+            {
+                "canton": "ambato",
+                "parroquias": "izamba",
+                "alimentador": "pia 1",
+                "sectores": "parque industrial ambato pia 1",
+                "lun 16": "",
+                "mar 17": "18:00 - 24:00",
+                "mier 18": "00:00 - 08:00",
+                "juev 19": ""
+            },
+            {
+                "canton": "ambato",
+                "parroquias": "santa rosa",
+                "alimentador": "industrial",
+                "sectores": "parque industrial santa rosa, sector casigana",
+                "lun 16": "",
+                "mar 17": "18:00 - 24:00",
+                "mier 18": "00:00 - 08:00",
+                "juev 19": ""
+            },
+            {
+                "canton": "ambato",
+                "parroquias": "benitez",
+                "alimentador": "bioalimentar",
+                "sectores": "industrias holviplas, bioalimentar y gelco.",
+                "lun 16": "",
+                "mar 17": "",
+                "mier 18": "18:00 - 24:00",
+                "juev 19": "00:00 - 08:00"
+            }
+        ]
+    }
+]

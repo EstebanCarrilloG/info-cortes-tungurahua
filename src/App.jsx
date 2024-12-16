@@ -9,7 +9,7 @@ import pageInfo from "./data/pageInfo.json";
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
-  const [week, setWeek] = useState("01");
+  const [week, setWeek] = useState("03");
   const [data, setData] = useState(getAllData(week));
   const [tabActive, setTabActive] = useState(week);
   const [searchValue, setSearchValue] = useState("");
